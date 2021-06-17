@@ -1,0 +1,8 @@
+@import "~@angular/material/theming";
+
+$my-palette: mat.define-palette($indigo-palette);
+
+.my-custom-darker-style {
+  background: mat.get-color-from-palette($my-palette, "darker");
+  color: mat.get-color-from-palette($my-palette, "darker-contrast");
+}

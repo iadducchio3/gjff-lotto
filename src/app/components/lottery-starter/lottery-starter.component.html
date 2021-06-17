@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+  <div id="cardContainer">
+    <mat-card>
+      <mat-card-title>Lottery Configuration</mat-card-title>
+      <mat-card-content>
+        <app-input
+          [control]="form.controls.RoundTime"
+          label="Round Time"
+          placeholder="Ex 90"
+        ></app-input>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onStartLottery()">Start Lottery</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>
