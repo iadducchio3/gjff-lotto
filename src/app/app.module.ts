@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -20,6 +21,10 @@ import { LotteryStarterComponent } from './components/lottery-starter/lottery-st
 import { LotteryComponent } from './components/lottery/lottery.component';
 import { ConfettiComponent } from './components/tools/confetti/confetti.component';
 import { TimerComponent } from './components/tools/timer/timer.component';
+import { DataTableComponent } from './components/ui/data-table/data-table.component';
+import { DndDirective } from './components/ui/file-uploader/dnd.directive';
+import { FileUploaderComponent } from './components/ui/file-uploader/file-uploader.component';
+import { ProgressComponent } from './components/ui/file-uploader/progress/progress.component';
 import { InputComponent } from './components/ui/input/input.component';
 
 @NgModule({
@@ -31,6 +36,10 @@ import { InputComponent } from './components/ui/input/input.component';
     ConfettiComponent,
     TimerComponent,
     InputComponent,
+    FileUploaderComponent,
+    DataTableComponent,
+    ProgressComponent,
+    DndDirective
   ],
   imports: [
     CommonModule,
@@ -54,7 +63,8 @@ import { InputComponent } from './components/ui/input/input.component';
     MatProgressSpinnerModule,
     MatRadioModule,
     MatTableModule,
+    MatIconModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

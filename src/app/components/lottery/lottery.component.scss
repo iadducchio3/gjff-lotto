@@ -1,0 +1,103 @@
+#lotteryWrapper {
+  overflow: none;
+  display: flex;
+  flex-direction: column;
+  height: 92vh;
+  //border: solid 6px red;
+  margin: 0;
+  padding: 0;
+
+  .title {
+    font-size: 3.5rem;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  #main-container {
+    display: flex;
+    height: 85vh;
+  }
+
+  #banner {
+    flex: 0 0 80px;
+    text-align: center;
+    //background-color: #424242;
+    border-bottom: 2px solid #ccc;
+    padding-top: 2rem;
+  }
+
+  #left-container {
+    flex-basis: 100%;
+    background-color: #424242;
+  }
+
+  #right-container {
+    flex-basis: 100%;
+    background-color: #424242;
+  }
+
+  #ticker-container {
+    height: 80px;
+    border-bottom: 2px solid #ccc;
+  }
+
+  marquee {
+    padding: 2rem;
+  }
+
+  .ticker-string {
+    font-size: 3rem;
+  }
+
+  #image-container {
+    height: 100%; //calc(100% - 80px);
+  }
+
+  #center-container {
+    flex-basis: 50%;
+    height: 85vh;
+    overflow: hidden;
+    // background-color: #424242;
+  }
+
+  img {
+    width: 97%;
+    margin-top: 2rem;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  // .image-animation {
+  //   transition: all 1s;
+  // }
+
+  .last-year-rank-item {
+    font-size: 1.75rem;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+#videoContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+#videoIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.results-ticker-container {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+}

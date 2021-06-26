@@ -3,11 +3,16 @@
     <mat-card>
       <mat-card-title>Lottery Configuration</mat-card-title>
       <mat-card-content>
-        <app-input
-          [control]="form.controls.RoundTime"
-          label="Round Time"
-          placeholder="Ex 90"
-        ></app-input>
+        <div class="row">
+          <app-file-uploader (onFileUploaded)="onFileUploaded($event)"></app-file-uploader>
+        </div>
+        <div class="row" style="text-align: center">
+          <app-input [control]="form.controls.Name" label="Lottery Name"></app-input>
+
+          <app-input [control]="form.controls.RoundTime" label="Round Time" placeholder="Ex 90"></app-input>
+
+          <app-input [control]="form.controls.OddsGroupings" label="# of Odds Groupings" placeholder="3 would give 1-4 the same odds, 5-8, 9-12"></app-input>
+        </div>
       </mat-card-content>
       <mat-card-actions>
         <button mat-button (click)="onStartLottery()">Start Lottery</button>

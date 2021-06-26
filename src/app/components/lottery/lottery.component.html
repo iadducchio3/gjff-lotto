@@ -1,50 +1,48 @@
-<!-- <div id="wrapper">
+<div id="lotteryWrapper">
   <div id="banner">
     <span class="title">{{ this.title }}</span>
   </div>
   <div id="main-container">
     <div id="left-container">
-      <app-data-table
-        [cols]="lastYearRankingsTableModel"
-        [data]="lastYearRankings"
-      ></app-data-table>
+      <div id="videoContainer">
+        <!-- width="100%"
+        height="40%" -->
+        <iframe
+          id="videoIframe"
+          *ngIf="!!currentSelection"
+          [src]="currentSelection.KeeperVideo"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <img style="width: 60% !important" *ngIf="!currentSelection" src="https://i.ya-webdesign.com/images/nfl-fantasy-football-png-16.png" />
+      </div>
+      <div class="results-ticker-container">
+        <marquee>
+          <span [innerHtml]="resultsTickerString"></span>
+        </marquee>
+      </div>
     </div>
     <div id="center-container">
       <div id="ticker-container">
         <marquee>
-          <span class="ticker-string">{{ tickerString }}</span>
+          <span class="ticker-string" [innerHtml]="tickerString"></span>
         </marquee>
       </div>
       <div id="image-container">
-        <app-timer
-          *ngIf="currentTime < roundTime - 5"
-          [currentTime]="currentFriendlyTime"
-        ></app-timer>
-        <img
-          *ngIf="!!currSelection"
-          class="image-animation"
-          [src]="currSelection?.userImage"
-        />
-        <img
-          *ngIf="!!!currSelection"
-          src="https://i.ya-webdesign.com/images/nfl-fantasy-football-png-16.png"
-        />
+        <app-timer *ngIf="currentTime < roundTime - 20" [currentTime]="currentFriendlyTime"></app-timer>
+        <img *ngIf="!!currentSelection" class="image-animation" [src]="'assets/OwnerImages/' + currentSelection?.UserImage" />
       </div>
     </div>
-    <div id="right-container">
-      <app-data-table
-        *ngIf="alreadySelected?.any()"
-        [cols]="alreadySelectedTableModel"
-        [data]="alreadySelected"
-      ></app-data-table>
-    </div>
+    <!-- <div id="right-container">put already selected people here</div> -->
   </div>
 </div>
 <app-confetti></app-confetti>
 
- Pre-load all the images to prevent delay
- <section style="display: none">
-  <ng-container *ngFor="let img of lotteryResult">
-    <img src="{{ img.userImage }}" />
+<!-- Pre-load all the images to prevent delay -->
+<section class="hide">
+  <ng-container *ngFor="let owner of inputData">
+    <img src="{{ 'assets/OwnerImages/' + owner.UserImage }}" />
   </ng-container>
-</section> -->
+</section>

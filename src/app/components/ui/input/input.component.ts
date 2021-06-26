@@ -9,6 +9,11 @@ export class InputComponent {
   @Input() control: string;
   @Input() placeholder;
   @Input() label;
-  @Input() inputType: string;
-  constructor() {}
+  @Input() inputType:
+    | 'text'
+    | 'checkbox'
+    | 'radio'
+    | 'file'
+    | 'password'
+    | 'number' = 'text';
 }

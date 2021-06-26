@@ -1,0 +1,47 @@
+<table
+  style="width: 100%; height: 100%;"
+  mat-table
+  [dataSource]="dataSource"
+  class="mat-elevation-z8"
+>
+  <ng-container
+    *ngFor="let col of tableCols; let i = index"
+    [matColumnDef]="col.key"
+  >
+    <th
+      style="text-align: center; font-size: 2rem;"
+      mat-header-cell
+      *matHeaderCellDef
+    >
+      {{ tableCols[i]["display"] }}
+    </th>
+    <td
+      align="center"
+      style="font-size: 1.75rem;"
+      mat-cell
+      *matCellDef="let element"
+    >
+      <!-- Checking if it's a normal column or column with specific config -->
+      <ng-container *ngIf="!col.config; else hasConfig">
+        {{ element[col.key] }}
+      </ng-container>
+      <!-- If this column has a config object so we will display depending
+      on our setted config -->
+      <ng-template #hasConfig>
+        <!-- if this attribute is a boolean, we will show values from config
+        object depending on his state -->
+        <ng-container *ngIf="col.config.isBoolean">
+          {{ showBooleanValue(element, col) }}
+        </ng-container>
+        <!-- if this attribute is a date, we will format it depending on format
+          value in config object -->
+        <ng-container *ngIf="col.config.isDate">
+          {{ element[col.key] | date: col.config.format }}
+        </ng-container>
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="keys"></tr>
+  <tr mat-row *matRowDef="let row; columns: keys"></tr>
+</table>

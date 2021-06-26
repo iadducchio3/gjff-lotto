@@ -1,0 +1,64 @@
+.webcoderskull {
+  font-size: 1em;
+  z-index: 999;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  font: 20rem/1 Arial;
+  z-index: 999;
+  //position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.webcoderskull-1 {
+  fill: none;
+  stroke: #d7bc4d;
+  stroke-dasharray: 7% 28%;
+  stroke-width: 8px;
+  -webkit-animation: stroke-offset 1s infinite linear;
+  animation: stroke-offset 1s infinite linear;
+}
+
+.webcoderskull-1:nth-child(1) {
+  stroke: #ffffff;
+  stroke-dashoffset: 7%;
+}
+
+.webcoderskull-1:nth-child(2) {
+  stroke: #bcd74d;
+  stroke-dashoffset: 14%;
+}
+
+.webcoderskull-1:nth-child(3) {
+  stroke: #bc4dd7;
+  stroke-dashoffset: 21%;
+}
+
+.webcoderskull-1:nth-child(4) {
+  stroke: #4dd7bc;
+  stroke-dashoffset: 28%;
+}
+
+.webcoderskull-1:nth-child(5) {
+  stroke: #4dbcd7;
+  stroke-dashoffset: 35%;
+}
+
+@-webkit-keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 35%;
+    stroke-dasharray: 0 87.5%;
+  }
+}
+
+@keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 35%;
+    stroke-dasharray: 0 87.5%;
+  }
+}
